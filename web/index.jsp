@@ -4,6 +4,8 @@
     Author     : jhona
 --%>
 
+<%@page import="java.sql.Connection"%>
+<%@page import="Conexao.ConectaBanco"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,5 +15,9 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <%
+            Connection con;
+            con = ConectaBanco.MetodoConexao();
+        %>
     </body>
 </html>
