@@ -18,9 +18,9 @@ import java.util.logging.Logger;
  */
 public class ConectaBanco {
     
-    private static String caminho ="jdbc:postgresql://tuffi.db.elephantsql.com:5432/zubpljlm";
-    private static String usuario = "zubpljlm";
-    private static String senha = "xgr2vU6_UU8cJn0t8Xe6jNxU2aaiYFu6";
+    private static String caminho ="jdbc:postgresql://localhost:5433/appweb";
+    private static String usuario = "postgres";
+    private static String senha = "Womanizer2";
     private static Connection con;
     
         public static Connection MetodoConexao()

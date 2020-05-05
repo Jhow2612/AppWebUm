@@ -4,20 +4,16 @@
     Author     : jhona
 --%>
 
-<%@page import="java.sql.Connection"%>
 <%@page import="Conexao.ConectaBanco"%>
+<%@page import="java.sql.Connection"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
     <body>
         <h1>Hello World!</h1>
-        <%
-            Connection con;
-            con = ConectaBanco.MetodoConexao();
-        %>
+
+        <a href="Pais/cadpais.jsp">Cadastrar país</a>
+         
+        
     </body>
 </html>
