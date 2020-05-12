@@ -36,6 +36,18 @@ public class CtrUsuarios {
             try 
             {
                 ps = con.prepareStatement(sql);
+                ps.setString(1, u.getLogin());
+                ps.setString(2, u.getSenha());
+                rs = ps.executeQuery();
+                    while(rs.next())
+                    {
+                        Usuarios objU = new Usuarios();
+                        objU.setCodusuario(rs.getInt("codusuario"));
+                        objU.setLogin(rs.getString("login"));
+                        objU.setSenha(rs.getString("senha"));
+                        L.add(u);
+                        
+                    }
             } 
             catch (SQLException ex) 
             {
