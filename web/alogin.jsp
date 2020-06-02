@@ -4,10 +4,10 @@
     Author     : jhona
 --%>
 
-<%@page import="Controller.CtrUsuarios"%>
+<%@page import="Controller.CtrCliente"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="Model.Usuarios"%>
+<%@page import="Model.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,17 +18,25 @@
     <body>
         <h1>Pagina Interna do Sistema</h1>
         <%
-            Usuarios objU = new Usuarios();
-            List<Usuarios> LU = new ArrayList<Usuarios>();
-            CtrUsuarios CtrU = new CtrUsuarios();
+            Cliente objU = new Cliente();
+            List<Cliente> LU = new ArrayList<Cliente>();
+            CtrCliente CtrU = new CtrCliente();
+            
             objU.setLogin(request.getParameter("login"));
             objU.setSenha(request.getParameter("senha"));
-            LU = CtrU.ListarUsuario(objU);
+            
+            LU = CtrU.ListarCliente(objU);
             
                 for(int i=0; i<LU.size(); i++)
                 {
                     if(LU.size()==1)
-                      out.print("Usuário conectado");
+                    {  
+                      HttpSession sessao = request.getSession();
+                      sessao.setAttribute("var_sessao_login", objU.getLogin());
+                      sessao.setAttribute("id_cliente", LU.get(i).getId_cliente());
+                      //out.print("Bem Vindo!!"+sessao.getAttribute("var_sessao_login"));
+                      response.sendRedirect("listarprodutos.jsp");
+                    }
                     if(LU.size()==0)
                       response.sendRedirect("login.jsp");
                 }

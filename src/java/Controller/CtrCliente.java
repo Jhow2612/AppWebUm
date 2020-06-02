@@ -6,7 +6,7 @@
 package Controller;
 
 import Conexao.ConectaBanco;
-import Model.Usuarios;
+import Model.Cliente;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,15 +20,15 @@ import java.util.logging.Logger;
  *
  * @author jhona
  */
-public class CtrUsuarios {
+public class CtrCliente {
     
     Connection con;
     
-    public List<Usuarios> ListarUsuario(Usuarios u)
+    public List<Cliente> ListarCliente(Cliente u)
     {
         //Não escreva pra cima
-        List<Usuarios> L = new ArrayList<Usuarios>();
-        String sql = "select * from usuarios where login=? and senha=? ";
+        List<Cliente> L = new ArrayList<Cliente>();
+        String sql = "select * from cliente where login=? and senha=? ";
         PreparedStatement ps;
         ResultSet rs;
         
@@ -41,8 +41,8 @@ public class CtrUsuarios {
                 rs = ps.executeQuery();
                     while(rs.next())
                     {
-                        Usuarios objU = new Usuarios();
-                        objU.setCodusuario(rs.getInt("codusuario"));
+                        Cliente objU = new Cliente();
+                        objU.setId_cliente(rs.getInt("id_cliente"));
                         objU.setLogin(rs.getString("login"));
                         objU.setSenha(rs.getString("senha"));
                         L.add(u);
@@ -51,7 +51,7 @@ public class CtrUsuarios {
             } 
             catch (SQLException ex) 
             {
-                Logger.getLogger(CtrUsuarios.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(CtrCliente.class.getName()).log(Level.SEVERE, null, ex);
             }
        
                 

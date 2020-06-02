@@ -13,7 +13,9 @@
         <h1>Hello World!</h1>
 
         <a href="Pais/cadpais.jsp">Cadastrar país</a><br>
-        <a href="Pais/listarpais.jsp">Listar país</a>
+        <a href="Pais/listarpais.jsp">Listar país</a><br>
+        <a href="listarprodutos.jsp">Produtos</a><br>
+        <a href="login.jsp">Login</a>
          
         
     </body>
