@@ -10,12 +10,9 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <h1>Hello World!</h1>
-
-        <a href="Pais/cadpais.jsp">Cadastrar país</a><br>
-        <a href="Pais/listarpais.jsp">Listar país</a><br>
-        <a href="listarprodutos.jsp">Produtos</a><br>
-        <a href="login.jsp">Login</a>
+        <h1>Sistema de compras AppWebUm</h1>
+        <%@include file="menu.jsp"%>
+  
          
         
     </body>

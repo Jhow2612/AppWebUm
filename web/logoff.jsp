@@ -18,7 +18,9 @@
         <%
             HttpSession sessao = request.getSession();
             sessao.removeAttribute("var_sessao_login");
-            
+            sessao.removeAttribute("var_sessao_login");
+            sessao.removeAttribute("id_cliente");
+            response.sendRedirect("index.jsp");
         
         %>
         

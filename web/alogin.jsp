@@ -32,6 +32,7 @@
                     if(LU.size()==1)
                     {  
                       HttpSession sessao = request.getSession();
+                      sessao.setAttribute("logado", 1);
                       sessao.setAttribute("var_sessao_login", objU.getLogin());
                       sessao.setAttribute("id_cliente", LU.get(i).getId_cliente());
                       //out.print("Bem Vindo!!"+sessao.getAttribute("var_sessao_login"));
